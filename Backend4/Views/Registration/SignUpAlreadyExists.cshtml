@@ -1,0 +1,54 @@
+﻿@model Backend4.Models.RegistrationPrimaryDataViewModel
+@{
+    ViewBag.Title = "Sign up";
+}
+
+<h2>Sign up</h2>
+<p>User with same profile data already exists. Are you sure you want to sign up?</p>
+
+<form asp-action="SignUpAlreadyExists" class="form-horizontal">
+
+    <div class="form-group">
+        <label class="col-md-2 control-label">First name</label>
+        <div class="col-md-10">
+            <p class="form-control-static">@Model.FirstName</p>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-md-2 control-label">Last name</label>
+        <div class="col-md-10">
+            <p asp-for="LastName" class="form-control-static">@Model.LastName</p>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-md-2 control-label">Birthday</label>
+        <div class="col-md-10 form-inline">
+            <span asp-for="Month" class="form-control-static">@Model.Month </span>
+            <span asp-for="Day" class="form-control-static">@Model.Day, </span>
+            <span asp-for="Year" class="form-control-static">@Model.Year</span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-md-2 control-label">Gender</label>
+        <div class="col-md-10">
+            <p asp-for="GenderMale" class="form-control-static">@Model.Gender</p>
+        </div>
+    </div>
+
+    <input type="hidden" asp-for="FirstName" />
+    <input type="hidden" asp-for="LastName" />
+    <input type="hidden" asp-for="Month" />
+    <input type="hidden" asp-for="Day" />
+    <input type="hidden" asp-for="Year" />
+    <input type="hidden" asp-for="Gender" />
+    <input type="hidden" asp-for="UserExisted" />
+
+    <div class="form-group">
+        <div class="col-md-10 col-md-offset-2">
+            <button class="btn btn-primary">Sign up anyway</button>
+        </div>
+    </div>
+</form>

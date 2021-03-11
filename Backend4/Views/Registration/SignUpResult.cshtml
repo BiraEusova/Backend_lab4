@@ -1,0 +1,28 @@
+﻿@model Backend4.Models.RegistrationSecondaryDataViewModel
+@{
+    ViewBag.Title = "Sign up";
+}
+
+<h2>Sign up result</h2>
+<form asp-action="SignUpResult" class="form-group">
+    <dl class="dl-horizontal">
+        <dt>First name</dt>
+        <dd asp-for="FirstName">@Model.FirstName</dd>
+        <dt>Last name</dt>
+        <dd asp-for="LastName">@Model.LastName</dd>
+        <dt>Birthday</dt>
+        <div class="dl-horizontal">
+            <dd asp-for="Month">@Model.Month </dd>
+            <dd asp-for="Day">@Model.Day, </dd>
+            <dd asp-for="Year">@Model.Year</dd>
+        </div>
+        <dt>Email</dt>
+        <dd asp-for="Email">@Model.Email</dd>
+        <dt>Password</dt>
+        <dd asp-for="Password">@Model.Password</dd>
+        <dt>User existed</dt>
+        <dd asp-for="UserExisted">@Model.UserExisted</dd>
+        <dt>Remembered</dt>
+        <dd asp-for="Remembered">@Model.Remembered</dd>
+    </dl>
+</form>
